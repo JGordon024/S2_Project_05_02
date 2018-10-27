@@ -14,21 +14,26 @@
 
 
 /* Grid Rows Styles */
+/* Defines the row class */
 div.row {
     width: 100%;
     clear: both;
 }
 
-div.row::after {
+/* Makes it so that it displays over elements when they've been cleared of their floats*/
+div.row:after {
     content: "";
-    display: table
+    display: table;
+    clear: both;
 }
 
 /* Grid Columns Styles */
+/* Any div elements that have a class that begins with column is floated to the left */
 div[class^="column"] {
     float: left;
 }
 
+/* Defines each class with the width that is associated inside it's class */
 div.column100 {
     width: 100%;
 }
@@ -42,11 +47,11 @@ div.column33 {
 }
 
 div.column67 {
-    width: 67%
+    width: 67%;
 }
 
 div.column25 {
-    width: 25%
+    width: 25%;
 }
 
 div.column75 {
@@ -62,7 +67,7 @@ div.column40 {
 }
 
 div.column60 {
-    width: 60%
+    width: 60%;
 }
 
 div.column80 {
@@ -70,10 +75,10 @@ div.column80 {
 }
 
 /* Grid Spacing Styles */
+/* Gives all the following classes an elements a box border model */
 .container,
 .row,
-div[class^="column-"],
-.cell-,
-div a {
+div[class^="column"],
+div.cell a {
     box-sizing: border-box;
 }
